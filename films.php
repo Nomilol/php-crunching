@@ -4,8 +4,7 @@
  $brut = json_decode($string, true);
  $top = $brut["feed"]["entry"];
 
- // var_dump($top);
- //
+
  // function ten($index){
  //   for ($i=0; $i < 10 ; $i++) {
  //     echo '<li>' . $index[$i]['im:name']['label'] . '</li>';
@@ -15,12 +14,22 @@
 
 
 
-function getGravity($index, $searching){
-  for ($i= 0 ; $i < 100 ; $i++) {
-    if($index[$i]['im:name']['label'] === $searching){
-      return $i + 1;
+// function getGravity($index, $searching){
+//   for ($i= 0 ; $i < 100 ; $i++) {
+//     if($index[$i]['im:name']['label'] === $searching){
+//       return $i + 1;
+//     }
+//   }
+// }
+//
+// echo getGravity($top,'Gravity');
+
+function searchRealistorOfMovie($index, $movie) {
+  for ($i=0; $i < 100 ; $i++) {
+    if ($index[$i]['im:name']['label'] === $movie) {
+      return $index[$i]['title']['label'];
     }
   }
 }
 
-echo getGravity($top,'Gravity');
+echo searchRealistorOfMovie($top, "The LEGO Movie" );
