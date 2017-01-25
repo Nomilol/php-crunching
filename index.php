@@ -11,7 +11,7 @@ echo $dicoLentgh;
      array_push($array15,$value);
    }
  }
- echo sizeof($array15);
+ echo '<div>'. sizeof($array15) . '</div>';
 
 
 $arrayS = [];
@@ -21,4 +21,14 @@ foreach ($dico as $key => $value) {
     array_push($arrayS, $value);
   }
 }
-echo sizeof($arrayS);
+echo  '<div>' . sizeof($arrayS) . '</div>';
+
+$arrayQ = [];
+
+foreach ($dico as $key => $value) {
+  if (substr($value, -1) === "q") {
+    array_push($arrayQ, $value);
+  }
+}
+
+echo sizeof($arrayQ);
